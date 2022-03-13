@@ -18,6 +18,8 @@ const typeDefs = gql`
 		email: String
 		"Date when the message was sent"
 		date: String
+		"DateString when the message was sent"
+		dateString: String
 	}
 
 	enum CacheControlScope {
