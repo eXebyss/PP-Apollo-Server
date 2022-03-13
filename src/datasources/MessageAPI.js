@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest')
 class MessageAPI extends RESTDataSource {
 	constructor() {
 		super()
-		this.baseURL = process.env.URL
+		this.baseURL = process.env.REST_URL
 	}
 
 	getMessages() {
