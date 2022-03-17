@@ -16,6 +16,8 @@ const typeDefs = gql`
 		name: String
 		"Email of the message author"
 		email: String
+		"Message content"
+		message: String
 		"Date when the message was sent"
 		date: String
 		"DateString when the message was sent"
