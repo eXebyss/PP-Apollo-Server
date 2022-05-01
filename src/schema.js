@@ -6,6 +6,10 @@ const typeDefs = gql`
 		messages: [Message!]!
 		"Fetch specific message"
 		message(id: ID!): Message!
+		"Query to get skill array"
+		skills: [Skill!]!
+		"Fetch specific skill"
+		skill(id: ID!): Skill!
 	}
 
 	"Message send via contact form"
@@ -22,6 +26,20 @@ const typeDefs = gql`
 		date: String
 		"DateString when the message was sent"
 		dateString: String
+	}
+
+	"Skill object"
+	type Skill @cacheControl(maxAge: 60) {
+		"Skill id"
+		_id: ID!
+		"Skill name"
+		name: String
+		"Text"
+		text: String
+		"Rate"
+		rate: Int
+		"Date"
+		date: String
 	}
 
 	enum CacheControlScope {

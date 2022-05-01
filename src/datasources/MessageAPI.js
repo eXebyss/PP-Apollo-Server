@@ -7,11 +7,11 @@ class MessageAPI extends RESTDataSource {
 	}
 
 	getMessages() {
-		return this.get('get-messages')
+		return this.get('messages/get-messages')
 	}
 
 	getMessage(messageId) {
-		return this.get(`get-messages/${messageId}`)
+		return this.get(`messages/get-messages/${messageId}`)
 	}
 }
 

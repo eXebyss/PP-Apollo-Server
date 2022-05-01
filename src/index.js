@@ -2,6 +2,7 @@ const { ApolloServer } = require('apollo-server')
 const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
 const MessageAPI = require('./datasources/MessageAPI')
+const SkillAPI = require('./datasources/SkillAPI')
 
 require('dotenv').config()
 
@@ -12,6 +13,7 @@ async function startApolloServer(typeDefs, resolvers) {
 		dataSources: () => {
 			return {
 				messageAPI: new MessageAPI(),
+				skillAPI: new SkillAPI(),
 			}
 		},
 	})
