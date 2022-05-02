@@ -53,6 +53,8 @@ const typeDefs = gql`
 			rate: Int
 			date: String
 		): Skill!
+		"Delete skill"
+		deleteSkill(id: ID!): Skill!
 	}
 
 	enum CacheControlScope {

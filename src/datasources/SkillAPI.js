@@ -17,6 +17,19 @@ class SkillAPI extends RESTDataSource {
 	getSkill(skillId) {
 		return this.get(`skills/get-skills/${skillId}`)
 	}
+
+	updateSkill(skillId, name, text, rate, date) {
+		return this.put(`skills/update-skill/${skillId}`, {
+			name,
+			text,
+			rate,
+			date,
+		})
+	}
+
+	deleteSkill(skillId) {
+		return this.delete(`skills/delete-skill/${skillId}`)
+	}
 }
 
 module.exports = SkillAPI

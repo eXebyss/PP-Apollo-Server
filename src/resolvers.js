@@ -17,6 +17,12 @@ const resolvers = {
 		saveSkill: (_, { name, text, rate, date }, { dataSources }) => {
 			return dataSources.skillAPI.saveSkill(name, text, rate, date)
 		},
+		updateSkill: (_, { id, name, text, rate, date }, { dataSources }) => {
+			return dataSources.skillAPI.updateSkill(id, name, text, rate, date)
+		},
+		deleteSkill: (_, { id }, { dataSources }) => {
+			return dataSources.skillAPI.deleteSkill(id)
+		},
 	},
 }
 
