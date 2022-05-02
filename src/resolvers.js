@@ -13,6 +13,11 @@ const resolvers = {
 			return dataSources.skillAPI.getSkill(id)
 		},
 	},
+	Mutation: {
+		saveSkill: (_, { name, text, rate, date }, { dataSources }) => {
+			return dataSources.skillAPI.saveSkill(name, text, rate, date)
+		},
+	},
 }
 
 module.exports = resolvers

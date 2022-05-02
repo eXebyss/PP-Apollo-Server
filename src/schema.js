@@ -1,17 +1,6 @@
 const { gql } = require('apollo-server')
 
 const typeDefs = gql`
-	type Query @cacheControl(maxAge: 60) {
-		"Query to get message array"
-		messages: [Message!]!
-		"Fetch specific message"
-		message(id: ID!): Message!
-		"Query to get skill array"
-		skills: [Skill!]!
-		"Fetch specific skill"
-		skill(id: ID!): Skill!
-	}
-
 	"Message send via contact form"
 	type Message @cacheControl(maxAge: 60) {
 		"Message id"
@@ -34,12 +23,36 @@ const typeDefs = gql`
 		_id: ID!
 		"Skill name"
 		name: String
-		"Text"
+		"Text or description of the skill"
 		text: String
-		"Rate"
+		"Rate of the skill"
 		rate: Int
 		"Date"
 		date: String
+	}
+
+	type Query @cacheControl(maxAge: 60) {
+		"Query to get message array"
+		messages: [Message!]!
+		"Fetch specific message"
+		message(id: ID!): Message!
+		"Query to get skill array"
+		skills: [Skill!]!
+		"Fetch specific skill"
+		skill(id: ID!): Skill!
+	}
+
+	type Mutation {
+		"Save skill"
+		saveSkill(name: String, text: String, rate: Int, date: String): Skill!
+		"Update skill"
+		updateSkill(
+			id: ID!
+			name: String
+			text: String
+			rate: Int
+			date: String
+		): Skill!
 	}
 
 	enum CacheControlScope {

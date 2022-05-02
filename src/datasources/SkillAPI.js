@@ -6,11 +6,15 @@ class SkillAPI extends RESTDataSource {
 		this.baseURL = process.env.REST_URL
 	}
 
-	async getSkills() {
+	saveSkill(name, text, rate, date) {
+		return this.post(`skills/save-skill`, { name, text, rate, date })
+	}
+
+	getSkills() {
 		return this.get('skills/get-skills')
 	}
 
-	async getSkill(skillId) {
+	getSkill(skillId) {
 		return this.get(`skills/get-skills/${skillId}`)
 	}
 }
