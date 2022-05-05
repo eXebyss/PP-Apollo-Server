@@ -14,11 +14,19 @@ const resolvers = {
 		},
 	},
 	Mutation: {
-		saveSkill: (_, { name, text, rate, date }, { dataSources }) => {
-			return dataSources.skillAPI.saveSkill(name, text, rate, date)
+		saveSkill: (
+			_,
+			{ name, text, rate, date, dateUpdated },
+			{ dataSources }
+		) => {
+			return dataSources.skillAPI.saveSkill(name, text, rate, date, dateUpdated)
 		},
-		updateSkill: (_, { id, name, text, rate, date }, { dataSources }) => {
-			return dataSources.skillAPI.updateSkill(id, name, text, rate, date)
+		updateSkill: (
+			_,
+			{ id, name, text, rate, dateUpdated },
+			{ dataSources }
+		) => {
+			return dataSources.skillAPI.updateSkill(id, name, text, rate, dateUpdated)
 		},
 		deleteSkill: (_, { id }, { dataSources }) => {
 			return dataSources.skillAPI.deleteSkill(id)

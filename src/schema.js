@@ -29,6 +29,8 @@ const typeDefs = gql`
 		rate: Int
 		"Date"
 		date: String
+		"Date when information was updated"
+		dateUpdated: String
 	}
 
 	type Query @cacheControl(maxAge: 60) {
@@ -44,7 +46,13 @@ const typeDefs = gql`
 
 	type Mutation {
 		"Save skill"
-		saveSkill(name: String, text: String, rate: Int, date: String): Skill!
+		saveSkill(
+			name: String
+			text: String
+			rate: Int
+			date: String
+			dateUpdated: String
+		): Skill!
 		"Update skill"
 		updateSkill(
 			id: ID!
@@ -52,6 +60,7 @@ const typeDefs = gql`
 			text: String
 			rate: Int
 			date: String
+			dateUpdated: String
 		): Skill!
 		"Delete skill"
 		deleteSkill(id: ID!): Skill!

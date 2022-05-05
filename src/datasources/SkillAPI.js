@@ -6,8 +6,14 @@ class SkillAPI extends RESTDataSource {
 		this.baseURL = process.env.REST_URL
 	}
 
-	saveSkill(name, text, rate, date) {
-		return this.post(`skills/save-skill`, { name, text, rate, date })
+	saveSkill(name, text, rate, date, dateUpdated) {
+		return this.post(`skills/save-skill`, {
+			name,
+			text,
+			rate,
+			date,
+			dateUpdated,
+		})
 	}
 
 	getSkills() {
@@ -18,12 +24,12 @@ class SkillAPI extends RESTDataSource {
 		return this.get(`skills/get-skills/${skillId}`)
 	}
 
-	updateSkill(skillId, name, text, rate, date) {
+	updateSkill(skillId, name, text, rate, dateUpdated) {
 		return this.put(`skills/update-skill/${skillId}`, {
 			name,
 			text,
 			rate,
-			date,
+			dateUpdated,
 		})
 	}
 
