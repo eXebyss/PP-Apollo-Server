@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'apollo-cms'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71BDBFFE2486484CAAB7A2ACBAE45AC4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_295A44A6F6A34F0BA44A66F6BA352ABE }}
           package: .
