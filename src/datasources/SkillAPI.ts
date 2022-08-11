@@ -38,4 +38,4 @@ class SkillAPI extends RESTDataSource {
 	}
 }
 
-module.exports = SkillAPI
+export default SkillAPI

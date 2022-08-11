@@ -1,8 +1,8 @@
-const { ApolloServer } = require('apollo-server')
-const typeDefs = require('./schema')
-const resolvers = require('./resolvers')
-const MessageAPI = require('./datasources/MessageAPI')
-const SkillAPI = require('./datasources/SkillAPI')
+import { ApolloServer } from 'apollo-server'
+import typeDefs from './schema'
+import resolvers from './resolvers'
+import MessageAPI from './datasources/MessageAPI'
+import SkillAPI from './datasources/SkillAPI'
 
 require('dotenv').config()
 

@@ -15,4 +15,4 @@ class MessageAPI extends RESTDataSource {
 	}
 }
 
-module.exports = MessageAPI
+export default MessageAPI

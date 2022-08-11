@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server')
+import { gql } from 'apollo-server'
 
 const typeDefs = gql`
 	"Message send via contact form"
@@ -78,4 +78,4 @@ const typeDefs = gql`
 	) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
 `
 
-module.exports = typeDefs
+export default typeDefs
