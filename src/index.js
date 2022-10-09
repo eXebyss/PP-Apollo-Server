@@ -2,7 +2,7 @@ const { ApolloServer } = require('apollo-server')
 const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
 const MessageAPI = require('./datasources/MessageAPI')
-const SkillAPI = require('./datasources/SkillAPI')
+const serverStatusRequest = require('./utils/serverStatusRequest')
 
 require('dotenv').config()
 
@@ -13,7 +13,6 @@ async function startApolloServer(typeDefs, resolvers) {
 		dataSources: () => {
 			return {
 				messageAPI: new MessageAPI(),
-				skillAPI: new SkillAPI(),
 			}
 		},
 	})
@@ -24,6 +23,9 @@ async function startApolloServer(typeDefs, resolvers) {
       🔉  Listening on port ${port}
       📭  Query at ${url}
     `)
+
+	// It will ping server to keep it from sleeping.
+	serverStatusRequest()
 }
 
 startApolloServer(typeDefs, resolvers)
