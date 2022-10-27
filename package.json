@@ -12,6 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@prisma/client": "^4.5.0",
 		"apollo-datasource-rest": "^3.5.1",
 		"apollo-server": "^3.6.4",
 		"axios": "^1.1.2",
@@ -20,6 +21,7 @@
 	},
 	"devDependencies": {
 		"auto-changelog": "^2.4.0",
-		"nodemon": "^2.0.15"
+		"nodemon": "^2.0.15",
+		"prisma": "^4.5.0"
 	}
 }
