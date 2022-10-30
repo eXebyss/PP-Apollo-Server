@@ -6,7 +6,10 @@
 	"scripts": {
 		"start": "node src/index",
 		"dev": "nodemon src/index",
-		"version": "auto-changelog -p && git add CHANGELOG.md"
+		"version": "auto-changelog -p && git add CHANGELOG.md",
+		"prisma:generate": "npx prisma generate --schema=./src/prisma/schema.prisma",
+		"prisma:migrate": "prisma db push --schema=./src/prisma/schema.prisma",
+		"prisma:studio": "npx prisma studio --schema=./src/prisma/schema.prisma"
 	},
 	"keywords": [],
 	"author": "",
