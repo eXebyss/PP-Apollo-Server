@@ -1,12 +1,10 @@
 const resolvers = {
 	Query: {
-		messages: (_, __, context) => {
-			return context.prisma.messages.findMany()
+		messages: (_, __, { dataSources }) => {
+			return dataSources.messageAPI.getMessages()
 		},
-		message: (_, { id }, context) => {
-			return context.prisma.messages.findUnique({
-				where: { id: id },
-			})
+		message: (_, { id }, { dataSources }) => {
+			return dataSources.messageAPI.getMessage(id)
 		},
 	},
 }
