@@ -4,7 +4,9 @@ const typeDefs = gql`
 	"Message send via contact form"
 	type Message @cacheControl(maxAge: 60) {
 		"Message id"
-		_id: ID!
+		_id: ID! @deprecated(reason: "Prisma does not support '_'. Use 'id'.")
+		"Message id v2"
+		id: ID!
 		"Name of the message author"
 		name: String
 		"Email of the message author"
