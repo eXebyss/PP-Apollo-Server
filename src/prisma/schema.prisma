@@ -1,0 +1,19 @@
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider      = "prisma-client-js"
+    // `native` is for your system and the other option must be added specific to the OS that Azure Web Apps uses.
+    binaryTargets = ["native", "linux-musl"]
+}
+
+model messages {
+    id         String    @id @default(auto()) @map("_id") @db.ObjectId
+    name       String?
+    email      String
+    message    String?
+    date       DateTime? @default(now())
+    dateString String?
+}
